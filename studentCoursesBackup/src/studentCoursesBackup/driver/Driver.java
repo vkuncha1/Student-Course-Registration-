@@ -1,26 +1,83 @@
 package studentCoursesBackup.driver;
+import studentCoursesBackup.util.Course;
+import studentCoursesBackup.util.Registration;
+import studentCoursesBackup.util.StudentPreference;
 
-/**
- * @author placeholder
- *
- */
+import java.io.*;
+import java.util.*;
+
+
+
+//Driver Class to run Student Registration code.
 public class Driver {
-	public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-		/*
-		 * As the build.xml specifies the arguments as argX, in case the
-		 * argument value is not given java takes the default value specified in
-		 * build.xml. To avoid that, below condition is used
-		 */
+        //FileProcessor fileProcessor = new FileProcessor();
+        //File path for CourseInfo
+        String courseInfo = "/Users/achyu/IdeaProjects/Assignmen1/files/courseInfo.txt";
+        Map<String, Course> map = new HashMap<>();
+        ArrayList<String> res=new ArrayList<>();
+        try {
+            File myObj = new File(courseInfo);
+            Scanner myReader = null;
+            try {
+                myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    Course course = new Course(data);
+                    map.put(course.getCourseName(), course);
+                }
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
 
-	    if (args.length != 5 || args[0].equals("${arg0}") || args[1].equals("${arg1}") || args[2].equals("${arg2}")
-				|| args[3].equals("${arg3}") || args[4].equals("${arg4}")) {
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
 
-			System.err.println("Error: Incorrect number of arguments. Program accepts 5 argumnets.");
-			System.exit(0);
-		}
-		
-		System.out.println("Hello World! Lets get started with the assignment");
+        //preferences and assigning
+        String coursePref = "/Users/achyu/IdeaProjects/Assignmen1/files/coursePref.txt";
+        try {
+            File myObj = new File(coursePref);
+            Scanner myReader = null;
+            try {
+                myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String split[] = data.replace(";", "").split(" ");
+                    StudentPreference sp = new StudentPreference(split[0], Arrays.copyOfRange(split, 1, 10));
+                    Registration reg = new Registration(sp,map);
+                    res.add(reg.generate());
 
-	}
+                }
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(res.toString());
+
+        //Write Satisfaction Rating to Text file
+        try {
+            FileWriter regResults = new FileWriter("registration_results.txt");
+            double avgSatisfaction = 0;
+            Integer totalNumber = 0 ;
+            for (String i:res){
+                String satisfactionRes = i;
+                String value = i.substring(i.lastIndexOf("=")+1);
+
+                avgSatisfaction +=Double.parseDouble(value);
+                totalNumber+=1;
+
+                regResults.write(satisfactionRes+ System.lineSeparator());
+            }
+            regResults.write("..."+ System.lineSeparator());
+            regResults.write("AverageSatisfactionRating="+(avgSatisfaction/totalNumber)+ System.lineSeparator());
+            regResults.close();
+        }catch(Exception ex){
+            System.out.println("Error in writing File: "+ex);
+        }
+    }
 }
