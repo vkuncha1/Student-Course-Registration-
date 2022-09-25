@@ -1,4 +1,6 @@
 package studentCoursesBackup.util;
+//Registration Class
+import java.util.Formatter;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Map;
@@ -25,9 +27,12 @@ public class Registration {
                 System.out.println("Course is not available");
             }
             Course course=courseMap.get(preferences[i]);
+
             if(course.checkToAllocate()){
                 //timeSet
                 if(!timeSet.contains(course.getCourseTiming())){
+                    System.out.println("Course Name ");
+                    System.out.println(course.getCourseName());
                     courses[allocated++]=course.getCourseName();
                     //allocated and increase count of allocated
                     courseMap.get(preferences[i]).allocate();
@@ -39,7 +44,7 @@ public class Registration {
                     }
                 }
                 else{
-                    System.out.println("Time mismatch "+course.getCourseName());
+                    System.out.println("Course Time mismatch "+course.getCourseName());
                 }
 
             }
@@ -60,10 +65,13 @@ public class Registration {
 
             courseString+=","+courses[i];
         }
-
         double avg=(double)satisfactionRating/3;
+
+
         //courseString+="::SatisfactionRating="+(avg);
-        System.out.println(courseString+="::SatisfactionRating="+(avg));
+        Formatter decimal_format = new Formatter();
+        decimal_format.format("%.2f", avg);
+        System.out.println(courseString+="::SatisfactionRating="+(decimal_format.toString()));
         return id+":"+courseString;
     }
 }
