@@ -26,7 +26,7 @@ public class Results {
             Formatter decimal_format = new Formatter();
             decimal_format.format("%.2f", avgSatisfaction/totalNumber);
             regResults.write("AverageSatisfactionRating="+decimal_format.toString()+ System.lineSeparator());
-            //regResults.close();
+            regResults.close();
         }catch(Exception ex){
             System.out.println("Error in writing File: "+ex);
             String courseErr =  "Error in Writing Results due to :"+ex+", Please,try again";
