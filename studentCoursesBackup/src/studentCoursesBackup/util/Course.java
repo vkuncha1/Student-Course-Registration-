@@ -1,4 +1,5 @@
 package studentCoursesBackup.util;
+//class for course Information
 public class Course {
     String courseName;
     Integer courseCapacity;
