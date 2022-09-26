@@ -1,5 +1,7 @@
 package studentCoursesBackup.util;
 
-public interface FileDisplayInterface  {
-    public void fileInputs();
+import java.util.ArrayList;
+
+public interface FileDisplayInterface {
+    public ArrayList<String> fileInput();
 }

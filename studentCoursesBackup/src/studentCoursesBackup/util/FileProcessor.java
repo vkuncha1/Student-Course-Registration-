@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class FileProcessor {
+public class FileProcessor implements FileDisplayInterface{
 
     public ArrayList<String> fileInput() {
         //File path for CourseInfo

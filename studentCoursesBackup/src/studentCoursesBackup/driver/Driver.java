@@ -14,7 +14,6 @@ public class Driver {
             Results conf = new Results();
             conf.writeError(courseErr);
         }
-
         try{
             Results result = new Results();
             result.writeResult();

@@ -3,9 +3,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Formatter;
 
-public class Results {
-
-
+public class Results implements StdoutDisplayInterface{
     public void writeResult(){
         //Write Satisfaction Rating to Text file
         try {
