@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Formatter;
 
 public class Results implements StdoutDisplayInterface{
+
+
     public void writeResult(){
         //Write Satisfaction Rating to Text file
         try {
@@ -17,7 +19,6 @@ public class Results implements StdoutDisplayInterface{
                 String value = i.substring(i.lastIndexOf("=")+1);
                 avgSatisfaction += Double.parseDouble(value);
                 totalNumber+=1;
-                System.out.println("The Result is : "+i);
                 regResults.write(satisfactionRes+ System.lineSeparator());
             }
             regResults.write("..."+ System.lineSeparator());
@@ -26,7 +27,7 @@ public class Results implements StdoutDisplayInterface{
             regResults.write("AverageSatisfactionRating="+decimal_format.toString()+ System.lineSeparator());
             regResults.close();
         }catch(Exception ex){
-            System.out.println("Error in writing File: "+ex);
+            System.err.println("Error in writing File: "+ex);
             String courseErr =  "Error in Writing Results due to :"+ex+", Please,try again";
             Results conf = new Results();
             conf.writeError(courseErr);
@@ -40,7 +41,7 @@ public class Results implements StdoutDisplayInterface{
             regResults.write(conflictIn+ System.lineSeparator());
             regResults.close();
         }catch(Exception ex){
-            System.out.println("Error in writing File: "+ex);
+            System.err.println("Error in writing File: "+ex);
             String courseErr =  "Error in writing Conflicts due to :"+ex+", Please,try again";
             Results conf = new Results();
             conf.writeError(courseErr);
@@ -55,7 +56,7 @@ public class Results implements StdoutDisplayInterface{
             regResults.write(errorIn+ System.lineSeparator());
             regResults.close();
         }catch(Exception ex){
-            System.out.println("Error in writing into Error File: "+ex);
+            System.err.println("Error in writing into Error File: "+ex);
         }
     }
 }

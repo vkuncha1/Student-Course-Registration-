@@ -1,11 +1,9 @@
 package studentCoursesBackup.util;
-import java.io.FileNotFoundException;
-import java.util.*;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+//For taking input and process
 public class FileProcessor implements FileDisplayInterface{
 
     public ArrayList<String> fileInput() {
@@ -32,6 +30,7 @@ public class FileProcessor implements FileDisplayInterface{
         }
 
         //preferences and assigning
+        //path for course prefs
         String coursePref = "/Users/achyu/IdeaProjects/Assignmen1/files/coursePref.txt";
         try {
             File myObj = new File(coursePref);

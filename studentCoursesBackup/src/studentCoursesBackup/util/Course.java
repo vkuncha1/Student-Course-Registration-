@@ -6,7 +6,7 @@ public class Course {
     Integer courseTiming;
     Integer courseAllocated = 0;
 
-    //For initializing the variables..
+    //Constructors
     public Course(String courseName, int courseCapacity, int courseTiming) {
         this.courseName = courseName;
         this.courseCapacity = courseCapacity;

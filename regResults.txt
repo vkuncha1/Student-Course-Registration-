@@ -1,0 +1,4 @@
+101:H,A,G::SatisfactionRating=7.33
+104:F,B,G::SatisfactionRating=7.33
+...
+AverageSatisfactionRating=7.33

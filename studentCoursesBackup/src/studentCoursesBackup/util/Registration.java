@@ -1,5 +1,5 @@
 package studentCoursesBackup.util;
-//Registration Class
+//Student Registration
 import java.util.*;
 
 public class Registration {
@@ -17,7 +17,7 @@ public class Registration {
         try {
             register(sp, courseMap);
         }catch(Exception e){
-            System.out.println("Registration Failed due to :"+ e);
+            System.err.println("Registration Failed due to :"+ e);
             String courseErr =  "Registration Failed due to :"+e+", Please,try again";
             Results conf = new Results();
             conf.writeError(courseErr);
@@ -29,39 +29,39 @@ public class Registration {
         System.out.println(sp.getId());
         Set<Integer> timeSet = new HashSet<>();
         ArrayList<String> courseClashList = new ArrayList<>();
-        for (int i = 0; i < 9; i++) {
-            if(!courseMap.containsKey(preferences[i])){
-                System.out.println("Course is not available");
-            }
-            Course course=courseMap.get(preferences[i]);
+        Results conf = new Results();
+        try {
+            for (int i = 0; i < 9; i++) {
+                if (!courseMap.containsKey(preferences[i])) {
+                    System.err.println("Course is not available");
+                }
+                Course course = courseMap.get(preferences[i]);
 
-            if(course.checkToAllocate()){
-                //timeSet
-                if(!timeSet.contains(course.getCourseTiming())){
-                    System.out.println("Course Name ");
-                    System.out.println(course.getCourseName());
-                    courses[allocated++]=course.getCourseName();
-                    //allocated and increase count of allocated
-                    courseMap.get(preferences[i]).allocate();
-                    timeSet.add(course.getCourseTiming());
-                    //rating
-                    satisfactionRating+=(9-i);
-                    if(allocated==3){
-                        break;
+                if (course.checkToAllocate()) {
+                    //timeSet
+                    if (!timeSet.contains(course.getCourseTiming())) {
+                        courses[allocated++] = course.getCourseName();
+                        //allocated and increase count of allocated
+                        courseMap.get(preferences[i]).allocate();
+                        timeSet.add(course.getCourseTiming());
+                        //rating
+                        satisfactionRating += (9 - i);
+                        if (allocated == 3) {
+                            break;
+                        }
+                    } else {
+                        courseClashList.add(course.getCourseName());
                     }
                 }
-                else{
-                    courseClashList.add(course.getCourseName());
-                    System.out.println("Course Time mismatch "+course.getCourseName());
-
-
-                }
-
             }
+            String courseConf =  "Course Time Clash for Student ID "+sp.getId()+": Clashing Courses: "+courseClashList;
+            conf.writeConflict(courseConf);
+        }catch(Exception e){
+            System.err.println("Allocation Failed due to :"+ e);
+            String courseErr =  "Allocation Failed due to :"+e+", Please,try again";
+            conf.writeError(courseErr);
         }
-        String courseConf =  "Course Time Clash for Student ID "+sp.getId()+": Clashing Courses: "+courseClashList;
-        Results conf = new Results();
-        conf.writeConflict(courseConf);
+
     }
 
     //<student1_id>:<course_1>,<course_2>,<course_3>::SatisfactionRating=<value>
@@ -79,7 +79,6 @@ public class Registration {
                 courseString += "," + courses[i];
             }
             double avg = (double) satisfactionRating / 3;
-
 
             //courseString+="::SatisfactionRating="+(avg);
             Formatter decimal_format = new Formatter();
