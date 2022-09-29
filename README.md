@@ -1,39 +1,74 @@
-# CSX42: Assignment 1
+# CS542: Assignment 1
 ## Name: Venkata Achyuth Kunchapu
-
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 
 
-Following are the commands and the instructions to run ANT on your project.
+Following are the commands and the instructions to run ANT on project.
 #### Note: build.xml is present in studentCoursesBackup/src folder.
+#### Note: courseInfo.txt, coursePrefs.txt, errorLog.txt, regConflicts.txt, and regResults.txt to be placed in same directory level as src
+
+Assumptions : Input files are well formatted, and no dupulicates
 
 -----------------------------------------------------------------------
-## Instruction to clean:
+## How to clean ?
 
-####Command: ant -buildfile studentCoursesBackup/src/build.xml clean
+Command: ant -buildfile studentCoursesBackup/src/build.xml clean
 
-Description: It cleans up all the .class files that were generated when you
-compiled your code.
+Description: It cleans up all the .class files that were generated when code was compiled.
 
 -----------------------------------------------------------------------
-## Instruction to compile:
+## How to compile ?
 
-####Command: ant -buildfile studentCoursesBackup/src/build.xml all
+Command: ant -buildfile studentCoursesBackup/src/build.xml all
 
 Description: Compiles your code and generates .class files inside the BUILD folder.
 
 -----------------------------------------------------------------------
-## Instruction to run:
+## How to run ?
 
-####Command: ant -buildfile studentCoursesBackup/src/build.xml run -Darg0=<input_file.txt> -Darg1=<delete_file.txt> -Darg2=<output1_file.txt> -Darg3=<output2_file.txt> -Darg4=<output3_file.txt>
+Command: ant -buildfile studentCoursesBackup/src/build.xml run -Darg0=coursePrefs.txt -Darg1=courseInfo.txt -Darg2=regResults.txt -Darg3=regConflicts.txt -Darg3=errorLog.txt
 
-## Replace <fileName.txt> with real file names. For example, if the files are available in the path,
-## you can run it in the following manner:
+-----------------------------------------------------------------------
+## Sample Input 
 
-ant -buildfile studentCoursesBackup/src/build.xml run -Darg0=input_file.txt -Darg1=delete_file.txt -Darg2=output1_file.txt -Darg3=output2_file.txt -Darg4=output3_file.txt
+#### coursePrefs.txt
 
-Note: Arguments accept the absolute path of the files.
+111 D C A B G I H F G;<br/>
+222 F E D C B A H I G;<br/>
+333 D A F E I C H B G;<br/>
+
+#### courseInfo.txt
+
+A:30:1<br/>
+B:40:2<br/>
+C:50:3<br/>
+D:60:1<br/>
+E:70:7<br/>
+F:35:4<br/>
+G:45:3<br/>
+H:55:7<br/>
+I:25:6<br/>
+
+## Output
+
+
+#### regResults.txt
+
+111:D,C,B::SatisfactionRating=7.67<br/>
+222:F,E,D::SatisfactionRating=8.00<br/>
+333:D,F,E::SatisfactionRating=7.33<br/>
+...<br/>
+AverageSatisfactionRating=7.67<br/>
+
+#### regConflicts.txt
+
+Clashing Courses: [A] with allocated course for Student ID 111<br/>
+Clashing Courses: [A] with allocated course for Student ID 333<br/>
+
+#### errorLog.txt
+
+
 
 -----------------------------------------------------------------------
 ## Description:
