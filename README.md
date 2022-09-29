@@ -1,6 +1,15 @@
 # CSX42: Assignment 1
 ## Name: Venkata Achyuth Kunchapu
 
+## How to Compile the code: 
+
+
+
+## How to Run the code:
+
+## Choice of the Data Structure:
+
+
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 
