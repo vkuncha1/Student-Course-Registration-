@@ -27,4 +27,10 @@ public class StudentPreference {
     public void setPref(String[] pref) {
         this.pref = pref;
     }
+
+    // StudentPreferance overide toString() method.
+    @Override
+    public String toString() {
+        return "Student with ID "+ id + "has following preferences: " +pref;
+    }
 }

@@ -61,4 +61,9 @@ public class Course {
     public boolean checkToAllocate() {
         return courseAllocated < courseCapacity;
     }
+    // Course class overide toString() method.
+    @Override
+    public String toString() {
+        return "Course Name:  "+ courseName + ", Course Capacity: "+ courseCapacity +",Course Timing: : " +courseTiming ;
+    }
 }

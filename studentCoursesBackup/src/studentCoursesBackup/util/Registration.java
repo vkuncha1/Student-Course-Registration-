@@ -114,4 +114,9 @@ public class Registration {
             return id + ":" + courseString;
         }
     }
+    // Registration class overide toString() method.
+    @Override
+    public String toString() {
+        return "Student with ID "+ id + "has following "+ allocated +" courses: " +courses + "with satisfaction rating as" + satisfactionRating ;
+    }
 }
