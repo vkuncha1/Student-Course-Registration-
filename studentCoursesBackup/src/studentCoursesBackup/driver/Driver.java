@@ -1,5 +1,14 @@
+/**
+ * The program works as a student registration
+ * based on student preferences
+ * creates an output files "regResults.txt" with registration details
+ * "regConflicts.txt" with any registration conflicts if any
+ * "errorLog.txt" with error log details if any
+ *
+ * @author  Venkata Achyuth Kunchapu
+ *
+ */
 package studentCoursesBackup.driver;
-
 import studentCoursesBackup.util.FileProcessor;
 import studentCoursesBackup.util.Results;
 
