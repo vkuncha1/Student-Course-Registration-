@@ -34,9 +34,41 @@ Command: ant -buildfile studentCoursesBackup/src/build.xml run -Darg0=coursePref
 
 #### coursePrefs.txt
 
-111 D C A B G I H F G;
-222 F E D C B A H I G;
-333 D A F E I C H B G;
+111 D C A B G I H F G;<br/>
+222 F E D C B A H I G;<br/>
+333 D A F E I C H B G;<br/>
+
+#### courseInfo.txt
+
+A:30:1<br/>
+B:40:2<br/>
+C:50:3<br/>
+D:60:1<br/>
+E:70:7<br/>
+F:35:4<br/>
+G:45:3<br/>
+H:55:7<br/>
+I:25:6<br/>
+
+## Output
+
+
+#### regResults.txt
+
+111:D,C,B::SatisfactionRating=7.67<br/>
+222:F,E,D::SatisfactionRating=8.00<br/>
+333:D,F,E::SatisfactionRating=7.33<br/>
+...<br/>
+AverageSatisfactionRating=7.67<br/>
+
+#### regConflicts.txt
+
+Clashing Courses: [A] with allocated course for Student ID 111<br/>
+Clashing Courses: [A] with allocated course for Student ID 333<br/>
+
+#### errorLog.txt
+
+
 
 -----------------------------------------------------------------------
 ## Description:
