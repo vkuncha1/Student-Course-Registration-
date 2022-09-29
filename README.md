@@ -6,7 +6,7 @@
 
 Following are the commands and the instructions to run ANT on project.
 #### Note: build.xml is present in studentCoursesBackup/src folder.
-#### Note: courseInfo.txt, coursePrefs.txt, errorLog.txt, regConflicts.txt, and regResults.txt to be placed in same directory as src
+#### Note: courseInfo.txt, coursePrefs.txt, errorLog.txt, regConflicts.txt, and regResults.txt to be placed in same directory level as src
 
 Assumptions : Input files are well formatted, and no dupulicates
 
