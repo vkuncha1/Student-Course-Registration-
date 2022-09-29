@@ -1,13 +1,22 @@
+/**
+ * Registration for classes based on student preference
+ * was completed here. The method Registration takes the
+ * student preference and Course Map to complete registration
+ * on "First come First Serve" basis.
+ *
+ * @author  Venkata Achyuth Kunchapu
+ *
+ */
 package studentCoursesBackup.util;
 //Student Registration
 
-import java.io.FileWriter;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Formatter;
 import java.util.Set;
-import java.io.File;
+
 
 public class Registration {
     String id;
@@ -33,7 +42,6 @@ public class Registration {
     //Allocating Courses
     private void register(StudentPreference sp,Map<String, Course> courseMap){
         String[] preferences=sp.getPref();
-        System.out.println(sp.getId());
         Set<Integer> timeSet = new HashSet<>();
         ArrayList<String> courseClashList = new ArrayList<>();
         Results conf = new Results();
@@ -48,7 +56,6 @@ public class Registration {
                 if (course.checkToAllocate()) {
                     //timeSet
                     if (!timeSet.contains(course.getCourseTiming())) {
-                        System.out.println(course.getCourseTiming());
                         courses[allocated++] = course.getCourseName();
                         //allocated and increase count of allocated
                         courseMap.get(preferences[i]).allocate();
@@ -59,13 +66,11 @@ public class Registration {
                             break;
                         }
                     } else {
-                        System.out.println(course.getCourseName());
                         courseClashList.add(course.getCourseName());
                     }
                 }
             }
             if (courseClashList.size() > 0){
-                System.out.println(courseClashList);
                 String courseConf = "Clashing Courses: " + courseClashList+ " with allocated course for Student ID " + sp.getId() ;
                 conf.writeConflict(courseConf);
             }
@@ -100,7 +105,7 @@ public class Registration {
             //courseString+="::SatisfactionRating="+(avg);
             Formatter decimal_format = new Formatter();
             decimal_format.format("%.2f", avg);
-            System.out.println(courseString += "::SatisfactionRating=" + (decimal_format.toString()));
+            courseString += "::SatisfactionRating=" + (decimal_format.toString());
             return id + ":" + courseString;
         } catch (Exception e) {
             String courseErr = "Error While allocation :" + e + ", Please,try again";

@@ -1,4 +1,13 @@
+/**
+ *
+ * Course class carries Course related details
+ * Course class includes constructors,getters and setters
+ * for the fields {courseName,courseCapacity,courseTiming,courseAllocated}
+ *
+ */
+
 package studentCoursesBackup.util;
+
 //class for course Information
 public class Course {
     String courseName;
@@ -44,6 +53,7 @@ public class Course {
     public void setCourseTiming(int courseTiming) {
         this.courseTiming = courseTiming;
     }
+    //To keep the count of courses allocated.
     public void allocate() {
         this.courseAllocated++;
         return;

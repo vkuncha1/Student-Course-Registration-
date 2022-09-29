@@ -1,3 +1,9 @@
+/**
+ * Student Preference class for student preferences and Student ID
+ *
+ * @author  Venkata Achyuth Kunchapu
+ *
+ */
 package studentCoursesBackup.util;
 
 public class StudentPreference {

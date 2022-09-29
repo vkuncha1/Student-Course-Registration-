@@ -1,3 +1,9 @@
+/**
+ * Results class implements StdoutDisplayInterface
+ * to write into output files
+ * @author  Venkata Achyuth Kunchapu
+ *
+ */
 package studentCoursesBackup.util;
 import java.io.File;
 import java.io.FileWriter;
@@ -44,7 +50,6 @@ public class Results implements StdoutDisplayInterface{
             String regConflictsPath = currentpath + "/studentCoursesBackup/regConflicts.txt";
             FileWriter regResults = new FileWriter(regConflictsPath,true);
             regResults.write(conflictIn+ System.lineSeparator());
-            System.out.println("OKK");
             regResults.close();
         }catch(Exception ex){
             System.err.println("Error in writing File: "+ex);

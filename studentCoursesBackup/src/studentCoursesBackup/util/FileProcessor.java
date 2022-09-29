@@ -1,3 +1,15 @@
+/**
+ * File Processor takes the input from two input
+ * files {courseInfo.txt and coursePrefs.txt}
+ * This class implements FileDisplay
+ *
+ * The return type of this method fileInput is ArrayList(String)
+ * which stores allocated courses along with satisfaction rate.
+ *
+ * @author  Venkata Achyuth Kunchapu
+ *
+ */
+
 package studentCoursesBackup.util;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -58,7 +70,6 @@ public class FileProcessor implements FileDisplayInterface{
         } catch (RuntimeException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(res.toString());
         return res;
     }
 }

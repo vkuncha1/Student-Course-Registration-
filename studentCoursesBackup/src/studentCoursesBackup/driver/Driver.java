@@ -16,6 +16,7 @@ import studentCoursesBackup.util.Results;
 public class Driver {
     public static void main(String[] args) {
         //Checking number of arguments and argument strings.
+
         if ((args.length ==5 )&& args[0].equals("coursePrefs.txt") && args[1].equals("courseInfo.txt") && args[2].equals("regResults.txt")
                 && args[3].equals("regConflicts.txt") && args[4].equals("errorLog.txt")) {
             //Reading Input files and processing student registration (uses Interface FileDisplayInterface to accept input's)
