@@ -1,0 +1,4 @@
+Clashing Courses: [C, A] with allocated course for Student ID 111
+Clashing Courses: [A] with allocated course for Student ID 333
+Clashing Courses: [C, A] with allocated course for Student ID 111
+Clashing Courses: [A] with allocated course for Student ID 333

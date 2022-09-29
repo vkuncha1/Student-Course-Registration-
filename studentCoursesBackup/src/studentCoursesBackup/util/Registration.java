@@ -1,6 +1,13 @@
 package studentCoursesBackup.util;
 //Student Registration
-import java.util.*;
+
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Formatter;
+import java.util.Set;
+import java.io.File;
 
 public class Registration {
     String id;
@@ -37,9 +44,11 @@ public class Registration {
                 }
                 Course course = courseMap.get(preferences[i]);
 
+
                 if (course.checkToAllocate()) {
                     //timeSet
                     if (!timeSet.contains(course.getCourseTiming())) {
+                        System.out.println(course.getCourseTiming());
                         courses[allocated++] = course.getCourseName();
                         //allocated and increase count of allocated
                         courseMap.get(preferences[i]).allocate();
@@ -50,17 +59,25 @@ public class Registration {
                             break;
                         }
                     } else {
+                        System.out.println(course.getCourseName());
                         courseClashList.add(course.getCourseName());
                     }
                 }
             }
-            String courseConf =  "Course Time Clash for Student ID "+sp.getId()+": Clashing Courses: "+courseClashList;
-            conf.writeConflict(courseConf);
+            if (courseClashList.size() > 0){
+                System.out.println(courseClashList);
+                String courseConf = "Clashing Courses: " + courseClashList+ " with allocated course for Student ID " + sp.getId() ;
+                conf.writeConflict(courseConf);
+            }
         }catch(Exception e){
             System.err.println("Allocation Failed due to :"+ e);
             String courseErr =  "Allocation Failed due to :"+e+", Please,try again";
             conf.writeError(courseErr);
         }
+
+    }
+
+    public void conflicts(){
 
     }
 

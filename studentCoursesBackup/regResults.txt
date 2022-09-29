@@ -1,4 +1,5 @@
-101:H,A,G::SatisfactionRating=7.33
-104:F,B,G::SatisfactionRating=7.33
+111:D,B,G::SatisfactionRating=6.67
+222:F,E,D::SatisfactionRating=8.00
+333:D,F,E::SatisfactionRating=7.33
 ...
 AverageSatisfactionRating=7.33

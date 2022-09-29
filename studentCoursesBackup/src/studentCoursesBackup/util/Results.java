@@ -1,4 +1,5 @@
 package studentCoursesBackup.util;
+import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Formatter;
@@ -9,7 +10,9 @@ public class Results implements StdoutDisplayInterface{
     public void writeResult(){
         //Write Satisfaction Rating to Text file
         try {
-            FileWriter regResults = new FileWriter("regResults.txt");
+            String currentpath = new File("").getAbsolutePath();
+            String regResultsPath = currentpath + "/studentCoursesBackup/regResults.txt";
+            FileWriter regResults = new FileWriter(regResultsPath);
             double avgSatisfaction = 0;
             Integer totalNumber = 0 ;
             FileProcessor file = new FileProcessor();
@@ -37,8 +40,11 @@ public class Results implements StdoutDisplayInterface{
     //Writing Conflict file
     public void writeConflict(String conflictIn){
         try {
-            FileWriter regResults = new FileWriter("regConflicts.txt",true);
+            String currentpath = new File("").getAbsolutePath();
+            String regConflictsPath = currentpath + "/studentCoursesBackup/regConflicts.txt";
+            FileWriter regResults = new FileWriter(regConflictsPath,true);
             regResults.write(conflictIn+ System.lineSeparator());
+            System.out.println("OKK");
             regResults.close();
         }catch(Exception ex){
             System.err.println("Error in writing File: "+ex);
@@ -52,7 +58,9 @@ public class Results implements StdoutDisplayInterface{
 
     public void writeError(String errorIn){
         try{
-            FileWriter regResults = new FileWriter("errorLog.txt",true);
+            String currentpath = new File("").getAbsolutePath();
+            String regErrorPath = currentpath + "/studentCoursesBackup/errorLog.txt";
+            FileWriter regResults = new FileWriter(regErrorPath,true);
             regResults.write(errorIn+ System.lineSeparator());
             regResults.close();
         }catch(Exception ex){

@@ -2,3 +2,5 @@ Registration Failed due to :java.lang.ArithmeticException: / by zero, Please,try
 Registration Failed due to :java.lang.ArithmeticException: / by zero, Please,try again
 Registration Failed due to :java.lang.ArithmeticException: / by zero, Please,try again
 Registration Failed due to :java.lang.ArithmeticException: / by zero, Please,try again
+Input File Processing Failed due to :java.lang.RuntimeException: java.lang.RuntimeException: java.io.FileNotFoundException: /Users/achyu/IdeaProjects/cs542-fall-22-assign1-vkuncha1/studentCoursesBackup/coursePref.txt (No such file or directory), Please,try again
+Error in Writing Results due to :java.lang.RuntimeException: java.lang.RuntimeException: java.io.FileNotFoundException: /Users/achyu/IdeaProjects/cs542-fall-22-assign1-vkuncha1/studentCoursesBackup/coursePref.txt (No such file or directory), Please,try again

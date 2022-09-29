@@ -1,14 +1,20 @@
 package studentCoursesBackup.util;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Arrays;
 
 //For taking input and process
 public class FileProcessor implements FileDisplayInterface{
 
     public ArrayList<String> fileInput() {
         //File path for CourseInfo
-        String courseInfo = "/Users/achyu/IdeaProjects/Assignmen1/files/courseInfo.txt";
+        String currentpath = new File("").getAbsolutePath();
+        String courseInfo = currentpath + "/studentCoursesBackup/courseInfo.txt";
+        //String courseInfo = "/Users/achyu/IdeaProjects/Assignmen1/files/courseInfo.txt";
         Map<String, Course> map = new HashMap<>();
         ArrayList<String> res = new ArrayList<>();
         try {
@@ -31,7 +37,8 @@ public class FileProcessor implements FileDisplayInterface{
 
         //preferences and assigning
         //path for course prefs
-        String coursePref = "/Users/achyu/IdeaProjects/Assignmen1/files/coursePref.txt";
+        String coursePref = currentpath + "/studentCoursesBackup/coursePrefs.txt";
+        //String coursePref = "/Users/achyu/IdeaProjects/Assignmen1/files/coursePref.txt";
         try {
             File myObj = new File(coursePref);
             Scanner myReader = null;
