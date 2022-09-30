@@ -71,6 +71,17 @@ Clashing Courses: [A] with allocated course for Student ID 333<br/>
 
 
 -----------------------------------------------------------------------
+
+
+#### Choice of Data Structure 
+
+Hash map is used to store the information related to course, 
+
+A HashMap's insertion, deletion, and search operations typically require O(1) constant time. In the worst situation, searching, insertion, and deletion in Java take O(n) time. 
+
+
+
+-----------------------------------------------------------------------
 ## Description:
 
 
@@ -87,6 +98,6 @@ grade of 0 for the involved assignment for my first offense and that I
 will receive a grade of F for the course for any additional
 offense.""
 
-Date: -- 
+Date: -- 09/29/2022
 
 
