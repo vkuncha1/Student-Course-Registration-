@@ -81,7 +81,7 @@ A HashMap's insertion, deletion, and search operations typically require O(1) co
 
 HashMap was my choice because to store the unique student id's and their courses, searching, updation operations with O(1) time. With increase in size, the hashmap space will increase. So, the space complexity for HashMap is O(n).
 
-
+HashMaps have the benefit of having time complexity for inserting and retrieving values that is typically O(1) over list which is O(n).
 
 
 -----------------------------------------------------------------------
