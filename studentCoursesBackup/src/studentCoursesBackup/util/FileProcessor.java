@@ -25,7 +25,7 @@ public class FileProcessor implements FileDisplayInterface{
     public ArrayList<String> fileInput() {
         //File path for CourseInfo
         String currentpath = new File("").getAbsolutePath();
-        String courseInfo = currentpath + "/studentCoursesBackup/courseInfo.txt";
+        String courseInfo = currentpath + "/courseInfo.txt";
         //String courseInfo = "/Users/achyu/IdeaProjects/Assignmen1/files/courseInfo.txt";
         Map<String, Course> map = new HashMap<>();
         ArrayList<String> res = new ArrayList<>();
@@ -49,7 +49,7 @@ public class FileProcessor implements FileDisplayInterface{
 
         //preferences and assigning
         //path for course prefs
-        String coursePref = currentpath + "/studentCoursesBackup/coursePrefs.txt";
+        String coursePref = currentpath + "/coursePrefs.txt";
         //String coursePref = "/Users/achyu/IdeaProjects/Assignmen1/files/coursePref.txt";
         try {
             File myObj = new File(coursePref);
