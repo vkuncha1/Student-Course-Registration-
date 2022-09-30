@@ -87,6 +87,12 @@ A HashMap's insertion, deletion, and search operations typically require O(1) co
 A Student Registration was developed using Java. The Input of this program is two .txt files coursePrefs.txt and courseInfo.txt which includes student nine course preferences (all are unique courses). courseInfo includes the different courses with seats availability and timing for the course. The algorithm that was followed was First come First Serve. From Course Info file, one by one student course preference will be captured and assign their requested courses on availability. If there are any clashes or seats unavailability their next preference of their course will be allocated. The result of their final allocated coursess will be stored in regResults.txt file it also includes satisfaction rating of the student after assigning the courses also average satisfaction rate of the students. If any conflicts between allocating course and already allocated course then the conflict was written in redConflicts.txt file. For any errors like file not found and others the errors will be written to errorLog.txt file. The code was written in Java and while reading input and output files used interfaces, handled exception handling, validated number of arguments, provided comments in Javadoc style for every class with return type explained and all the design formatting is followed while developing the code. 
 
 -----------------------------------------------------------------------
+## References:
+
+1. https://www.geeksforgeeks.org/overriding-tostring-method-in-java/
+2. https://www.geeksforgeeks.org/filewriter-class-in-java/
+
+-----------------------------------------------------------------------
 ### Academic Honesty statement:
 -----------------------------------------------------------------------
 
