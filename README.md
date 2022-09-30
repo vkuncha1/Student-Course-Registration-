@@ -79,6 +79,9 @@ Hash map is used to store the information related to course,
 
 A HashMap's insertion, deletion, and search operations typically require O(1) constant time. In the worst situation, searching, insertion, and deletion in Java take O(n) time. 
 
+HashMap was my choice because to store the unique student id's and their courses, searching, updation operations with O(1) time. With increase in size, the hashmap space will increase. So, the space complexity for HashMap is O(n).
+
+
 
 
 -----------------------------------------------------------------------
