@@ -47,7 +47,7 @@ public class Results implements StdoutDisplayInterface{
     public void writeConflict(String conflictIn){
         try {
             String currentpath = new File("").getAbsolutePath();
-            String regConflictsPath = currentpath + "/studentCoursesBackup/regConflicts.txt";
+            String regConflictsPath = currentpath + "/regConflicts.txt";
             FileWriter regResults = new FileWriter(regConflictsPath,true);
             regResults.write(conflictIn+ System.lineSeparator());
             regResults.close();
@@ -64,7 +64,7 @@ public class Results implements StdoutDisplayInterface{
     public void writeError(String errorIn){
         try{
             String currentpath = new File("").getAbsolutePath();
-            String regErrorPath = currentpath + "/studentCoursesBackup/errorLog.txt";
+            String regErrorPath = currentpath + "/errorLog.txt";
             FileWriter regResults = new FileWriter(regErrorPath,true);
             regResults.write(errorIn+ System.lineSeparator());
             regResults.close();
