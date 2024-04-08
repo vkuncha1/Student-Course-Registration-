@@ -1,7 +1,3 @@
-# CS542: Assignment 1
-## Name: Venkata Achyuth Kunchapu
------------------------------------------------------------------------
------------------------------------------------------------------------
 
 
 Following are the commands and the instructions to run ANT on project.
